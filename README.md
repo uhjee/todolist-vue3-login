@@ -1,24 +1,18 @@
-# todolist-vue3-typescript-login
+# Vue3를 활용한 jwt 로그인 구현
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+## 📌 library
+```angular2html
+npm install vue-router@4
+npm install vuex@4
+npm install vee-validate@4 yup
+npm install axios
+npm install bootstrap@4 jquery popper.js
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome@prerelease
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+## 📚 참고
+- [vue-3-authentication-jwt](https://www.bezkoder.com/vue-3-authentication-jwt/?__cf_chl_tk=lushZhPF_eDZhle6YDnS01unt7Lx65qD7Hksmz84YHM-1660026009-0-gaNycGzNCNE)
