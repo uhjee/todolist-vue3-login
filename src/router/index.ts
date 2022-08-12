@@ -1,11 +1,12 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import Login from '@/components/LoginView.vue';
 import Frame from '../layouts/Frame.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Frame',
-    component: Frame,
+    name: 'Login',
+    component: Login,
   },
   {
     path: '/about',
