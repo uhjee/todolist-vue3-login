@@ -6,3 +6,7 @@ export type User = {
 };
 
 export type LoginUser = Pick<User, 'email' | 'password'>;
+
+export type LoggedUser = Omit<User, 'password'> & {
+  accessToken: string;
+}

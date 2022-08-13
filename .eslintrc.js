@@ -31,14 +31,8 @@ module.exports = {
         tsx: 'never',
       },
     ],
-  },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ['node_modules', 'src/'],
-      },
-      typescript: {},
-    },
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    'no-underscore-dangle': 0,
   },
 };

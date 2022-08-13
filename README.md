@@ -10,6 +10,9 @@ npm install bootstrap@4 jquery popper.js
 npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome@prerelease
 ```
 
+## 📌 vee-validate, yup 라이브러리를 사용해 유효성 검사
+src/components/LoginView.vue
+- Form, Field 컴포넌트 사용
 
 
 

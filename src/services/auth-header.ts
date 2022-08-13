@@ -12,7 +12,7 @@ export default function authHeader(): AxiosRequestHeaders | undefined {
   if (userInfoString) {
     const userInfo = JSON.parse(userInfoString);
     if (userInfo && userInfo.accessToken) {
-      return { Authrization: `Bearer ${userInfo.accessToken}` };
+      return { Authorization: `Bearer ${userInfo.accessToken}` };
     }
   }
   return undefined;

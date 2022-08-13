@@ -1,9 +1,17 @@
 import AuthService from '@/services/auth.service';
 import { Module } from 'vuex';
+import { LoggedUser, LoginUser, User } from '@/types/User';
+import { ResponseEntity } from '@/types/ResponseEntity';
 
 const userInfo = (() => localStorage.getItem('user'))();
 
-const initialState = userInfo
+interface InitialState {
+  status: { loggedIn: boolean };
+  user: string | null;
+  // user: User | null;
+}
+
+const initialState: InitialState = userInfo
   ? {
     status: { loggedIn: true },
     user: userInfo,
@@ -13,15 +21,15 @@ const initialState = userInfo
     user: null,
   };
 
-const auth: Module<any, any> = {
+const auth: Module<InitialState, any> = {
   namespaced: true,
   state: initialState,
   actions: {
-    async login({ commit }, user: any) {
+    async login({ commit }, user: LoginUser) {
       try {
         // service 사용해 api 요청
-        const { user: loggedUser } = await AuthService.login(user);
-        commit('loginSuccess', user);
+        const loggedUser: LoggedUser = await AuthService.login(user);
+        commit('loginSuccess', loggedUser);
         return loggedUser;
       } catch (e) {
         commit('loginFailure');
@@ -32,7 +40,7 @@ const auth: Module<any, any> = {
       AuthService.logout();
       commit('logout');
     },
-    register({ commit }, user) {
+    register({ commit }, user: User): Promise<ResponseEntity> {
       return AuthService.register(user)
         .then(
           (response) => {

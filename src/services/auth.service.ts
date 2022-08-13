@@ -1,14 +1,15 @@
 import axios from 'axios';
-import { LoginUser, User } from '@/types/User';
+import { LoggedUser, LoginUser, User } from '@/types/User';
 
-const API_URL = 'http://localhost:3000/api/auth';
+// const API_URL = 'http://localhost:3000/api/auth';
+const API_URL = '/api/auth';
 
 class AuthService {
   /**
    * 로그인을 진행한다.
    * @param user
    */
-  login = (user: LoginUser) =>
+  login = (user: LoginUser): Promise<LoggedUser> =>
     axios
       .post(`${API_URL}/signin`, {
         email: user.email,
@@ -36,7 +37,7 @@ class AuthService {
    */
   register = (user: User) =>
     axios.post(`${API_URL}/signup`, {
-      username: user.name,
+      name: user.name,
       email: user.email,
       password: user.password,
       role: user.role,
