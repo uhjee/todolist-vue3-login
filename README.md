@@ -14,6 +14,11 @@ npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons 
 src/components/LoginView.vue
 - Form, Field 컴포넌트 사용
 
+## 📌 vuex-persistedstate 라이브러리 사용해 새로고침 후에도 vuex 데이터 보관
+- localStorage에 보관 후 다시 세팅
+- store/index.ts 에 plugin 세팅
+
+## 📌 gravatar 라이브러리 사용해 사용자 별 프로필 이미지 생성
 
 
 

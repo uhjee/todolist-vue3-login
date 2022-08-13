@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import auth from './auth.module';
 
 export default createStore({
@@ -9,4 +10,9 @@ export default createStore({
   modules: {
     auth,
   },
+  plugins: [
+    createPersistedState({
+      paths: ['auth'],
+    }),
+  ],
 });

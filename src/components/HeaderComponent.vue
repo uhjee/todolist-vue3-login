@@ -3,6 +3,7 @@
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
+import gravatar from 'gravatar';
 import { LoggedUser } from '@/types/User';
 
 const router = useRouter();
@@ -46,7 +47,8 @@ const logOut = () => {
       <div v-if="currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
           <router-link to="/profile" class="nav-link">
-            <font-awesome-icon icon="user"/>
+            <img class="profile-img" :src="gravatar.url(currentUser.email, {s: '28px', d: 'retro'})"
+                 alt=""/>
             {{ currentUser.name }}
           </router-link>
         </li>
@@ -64,5 +66,11 @@ const logOut = () => {
 <style lang="scss" scoped>
 .logout-item {
   cursor: pointer;
+}
+
+.profile-img {
+  width: 28px;
+  height: 28px;
+  margin-right: 6px;
 }
 </style>

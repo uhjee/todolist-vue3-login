@@ -45,10 +45,13 @@ onMounted(async () => {
 
 <template>
   <div>
-    <ul>
+    <ul v-if="todos.length > 0">
       <li v-for="todo in todos" :key="todo.id">
         {{ todo.content }}
       </li>
     </ul>
+    <div v-else>
+      Todo List is Empty.
+    </div>
   </div>
 </template>

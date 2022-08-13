@@ -3,6 +3,7 @@ import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import { LoggedUser } from '@/types/User';
+import gravatar from 'gravatar';
 
 const store = useStore();
 const router = useRouter();
@@ -30,9 +31,13 @@ onMounted(() => {
 <template>
   <div class="container">
     <header class="jumbotron">
-      <h3>
-        <strong>{{ currentUser.name }}</strong> Profile
-      </h3>
+      <div class="header-inner-box">
+        <img class="profile-img" :src="gravatar.url(currentUser.email, {s: '28px', d: 'retro'})"
+             alt=""/>
+        <h3>
+          <strong>{{ currentUser.name }}</strong> Profile
+        </h3>
+      </div>
     </header>
     <p>
       <strong>Token: </strong>
@@ -52,3 +57,18 @@ onMounted(() => {
     </p>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.header-inner-box {
+  display: flex;
+
+  & > * {
+    margin-right: 6px;
+  }
+
+  .profile-img {
+    width: 30px;
+    height: 30px;
+  }
+}
+</style>
