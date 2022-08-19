@@ -4,7 +4,7 @@ import { Form, Field, ErrorMessage } from 'vee-validate';
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
-import { User } from '@/types/User';
+import { RegisterUser } from '@/types/RegisterUser';
 import { ResponseEntity, ResponseStatus } from '@/types/ResponseEntity';
 
 const router = useRouter();
@@ -22,7 +22,7 @@ onMounted(() => {
   }
 });
 
-const handleRegister = async (user: User) => {
+const handleRegister = async (user: RegisterUser) => {
   message.value = '';
   successful.value = false;
   loading.value = true;

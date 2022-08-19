@@ -4,7 +4,7 @@ import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import gravatar from 'gravatar';
-import { LoggedUser } from '@/types/User';
+import { LoggedUser } from '@/types/RegisterUser';
 
 const router = useRouter();
 const store = useStore();
@@ -19,14 +19,14 @@ const logOut = () => {
 </script>
 
 <template>
-  <div>
+  <div class="header-container">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <a href="/" class="navbar-brand">TodoList</a>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/home" class="nav-link">
-            <font-awesome-icon icon="home"/>
-            Home
+          <router-link to="/todos" class="nav-link">
+            <font-awesome-icon icon="list-check"/>
+            Todo-list
           </router-link>
         </li>
       </div>
@@ -64,13 +64,16 @@ const logOut = () => {
 </template>
 
 <style lang="scss" scoped>
-.logout-item {
-  cursor: pointer;
-}
+.header-container {
+  margin-bottom: 16px;
+  .logout-item {
+    cursor: pointer;
+  }
 
-.profile-img {
-  width: 28px;
-  height: 28px;
-  margin-right: 6px;
+  .profile-img {
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+  }
 }
 </style>

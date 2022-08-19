@@ -20,7 +20,14 @@ src/components/LoginView.vue
 
 ## 📌 gravatar 라이브러리 사용해 사용자 별 프로필 이미지 생성
 
+## 📌 bearer token 구성 함수 작성
+- [X] FE에서 bearer token 다루는 법 공부
+    - axios Header 구성 함수 작성
 
+
+## 📌 칸반 기능 구현 - vue draggable 라이브러리 사용
+- [X] 조회, 수정 기능 완료
+- [X] 같은 그룹 내, todo 간 order by 처리하기
 
 ## 📚 참고
 - [vue-3-authentication-jwt](https://www.bezkoder.com/vue-3-authentication-jwt/?__cf_chl_tk=lushZhPF_eDZhle6YDnS01unt7Lx65qD7Hksmz84YHM-1660026009-0-gaNycGzNCNE)

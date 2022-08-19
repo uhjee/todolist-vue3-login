@@ -1,3 +1,5 @@
+import { User } from '@/types/RegisterUser';
+
 export enum TodoStatus {
   NOT_DONE = 'NOT_DONE', // not done
   DOING = 'DOING', // doing
@@ -8,5 +10,14 @@ export type Todo = {
   id: number;
   content: string;
   status: TodoStatus;
-  user: any;
+  createAt: Date;
+  updatedAt: Date;
+  deletedAt: Date;
+  user: User;
+}
+
+export interface TodosGroupByStatus {
+  notDone: Todo[];
+  doing: Todo[];
+  done: Todo[];
 }

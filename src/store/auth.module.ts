@@ -1,6 +1,6 @@
 import AuthService from '@/services/auth.service';
 import { Module } from 'vuex';
-import { LoggedUser, LoginUser, User } from '@/types/User';
+import { LoggedUser, LoginUser, RegisterUser } from '@/types/RegisterUser';
 import { ResponseEntity } from '@/types/ResponseEntity';
 
 const userInfo = (() => localStorage.getItem('user'))();
@@ -40,12 +40,12 @@ const auth: Module<InitialState, any> = {
       AuthService.logout();
       commit('logout');
     },
-    register({ commit }, user: User): Promise<ResponseEntity> {
+    register({ commit }, user: RegisterUser): Promise<ResponseEntity<string>> {
       return AuthService.register(user)
         .then(
-          (response) => {
+          (resData) => {
             commit('registerSuccess');
-            return Promise.resolve(response.data);
+            return Promise.resolve(resData);
           },
           (error) => {
             commit('registerFailure');

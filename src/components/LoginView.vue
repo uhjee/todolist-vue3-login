@@ -4,7 +4,7 @@ import { ErrorMessage, Field, Form } from 'vee-validate';
 import * as yup from 'yup';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
-import { LoginUser } from '@/types/User';
+import { LoginUser } from '@/types/RegisterUser';
 
 // vuex store
 const store = useStore();
@@ -15,7 +15,7 @@ const message = ref<string>('');
 
 const loggedIn = computed<boolean>(() => store.state.auth.status.loggedIn);
 
-// 로그인된 유저라면 route to 'profile'
+// # [Auth]로그인된 유저라면 route to 'profile'
 onMounted(() => {
   if (loggedIn.value) {
     router.push('/profile');

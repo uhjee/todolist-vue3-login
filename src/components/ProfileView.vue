@@ -2,7 +2,7 @@
 import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
-import { LoggedUser } from '@/types/User';
+import { LoggedUser } from '@/types/RegisterUser';
 import gravatar from 'gravatar';
 
 const store = useStore();
@@ -39,22 +39,32 @@ onMounted(() => {
         </h3>
       </div>
     </header>
-    <p>
-      <strong>Token: </strong>
-      <span>
+    <div class="detail-inner-box">
+      <p>
+        <strong>Token: </strong>
+        <span>
       {{
-          accessTokenForView
-        }}
+            accessTokenForView
+          }}
       </span>
-    </p>
-    <p>
-      <strong>Email: </strong>
-      <span>{{ currentUser.email }}</span>
-    </p>
-    <p>
-      <strong>Role: </strong>
-      <span>{{ currentUser.role }}</span>
-    </p>
+      </p>
+      <p>
+        <strong>Email: </strong>
+        <span>{{ currentUser.email }}</span>
+      </p>
+      <p>
+        <strong>Role: </strong>
+        <span>{{ currentUser.role }}</span>
+      </p>
+      <p>
+        <strong>created at: </strong>
+        <span>{{ currentUser.createdAt }}</span>
+      </p>
+      <p>
+        <strong>is black user : </strong>
+        <span>{{ currentUser.isBlackUser }}</span>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -70,5 +80,8 @@ onMounted(() => {
     width: 30px;
     height: 30px;
   }
+}
+.detail-inner-box {
+  margin-left:50px;
 }
 </style>

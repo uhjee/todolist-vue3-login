@@ -19,9 +19,11 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "reset-css": "^5.0.1",
+    "sortablejs": "^1.15.0",
     "vee-validate": "^4.6.4",
     "vue": "^3.2.13",
     "vue-router": "^4.0.13",
+    "vuedraggable": "^4.1.0",
     "vuex": "^4.0.0",
     "vuex-persistedstate": "^4.1.0",
     "yup": "^0.32.11"

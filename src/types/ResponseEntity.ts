@@ -4,8 +4,8 @@ export enum ResponseStatus {
   BAD_PARAMETER = 'BAD_PARAMETER',
 }
 
-export type ResponseEntity = {
-  _data: any[] | null,
+export type ResponseEntity<T> = {
+  _data: T | null,
   _message: string
   _statusCode: ResponseStatus;
 }
