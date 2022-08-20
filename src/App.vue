@@ -2,12 +2,12 @@
   <HeaderComponent/>
   <div class="container">
     <router-view/>
-
   </div>
 </template>
 
 <script setup lang="ts">
 import HeaderComponent from '@/components/HeaderComponent.vue';
+import MyModal from '@/teleport/MyModal.vue';
 
 </script>
 

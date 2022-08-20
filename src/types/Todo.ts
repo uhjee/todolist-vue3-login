@@ -21,3 +21,8 @@ export interface TodosGroupByStatus {
   doing: Todo[];
   done: Todo[];
 }
+
+export interface AddedEmitPayload {
+  id: number;
+  status: TodoStatus;
+}

@@ -1,4 +1,11 @@
 * {
-    color: #333;
     box-sizing: border-box;
+}
+
+div, h1, h2, h3, p, span {
+    color: #333;
+}
+
+ul {
+    list-style:none
 }

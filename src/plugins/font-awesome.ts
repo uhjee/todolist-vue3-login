@@ -7,7 +7,20 @@ import {
   faSignOutAlt,
   faUser,
   faUserPlus,
+  faPlus,
+  faDeleteLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faHome, faListCheck, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
+const icons = {
+  faHome,
+  faListCheck,
+  faUser,
+  faUserPlus,
+  faSignInAlt,
+  faSignOutAlt,
+  faPlus,
+  faDeleteLeft,
+};
+
+library.add({ ...icons });
 export default FontAwesomeIcon;

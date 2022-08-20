@@ -21,7 +21,7 @@ class TodoService {
   /**
    * 로그인한 유저의 todo 목록을 반환한다.
    */
-  getUserTodos = async () => axios.get<ResponseEntity<Todo[]>>(`${API_URL}/todo/user`, { headers: authHeader() });
+  getUserTodos = () => axios.get<ResponseEntity<Todo[]>>(`${API_URL}/todo/user`, { headers: authHeader() });
 
   // getManagerTodos = () => {
   //
@@ -33,7 +33,11 @@ class TodoService {
 
   getAllTodosGroupByStatus = async () => axios.get<ResponseEntity<TodosGroupByStatus>>(`${API_URL}/todo/status`);
 
-  updateTodo = async (todoId: number, todo: Partial<Todo>) => axios.patch<ResponseEntity<Todo>>(`${API_URL}/todo/${todoId}`, todo);
+  updateTodo = (todoId: number, todo: Partial<Todo>) => axios.patch<ResponseEntity<Todo>>(`${API_URL}/todo/${todoId}`, todo);
+
+  createTodoWithoutLogin = (todo: Pick<Todo, 'content'>) => axios.post<ResponseEntity<Todo>>(`${API_URL}/todo/without-login`, todo);
+
+  deleteTodoWithoutLogin = (id: number) => axios.delete<ResponseEntity<string>>(`${API_URL}/todo/${id}/without-login`);
 }
 
 // export service instance
