@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import LoginView from '@/components/LoginView.vue';
-import ProfileView from '@/components/ProfileView.vue';
-import TodolistView from '@/components/todolist/TodolistView.vue';
-import TodolistWithoutLoginView from '@/components/todolist/TodolistWithoutLoginView.vue';
-import RegisterView from '@/components/RegisterView.vue';
+import LoginView from '@/views/LoginView.vue';
+import ProfileView from '@/views/ProfileView.vue';
+import TodolistView from '@/views/TodolistView.vue';
+import TodolistWithoutLoginView from '@/views/TodolistWithoutLoginView.vue';
+import RegisterView from '@/views/RegisterView.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {

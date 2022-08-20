@@ -35,7 +35,7 @@ import { onMounted, ref } from 'vue';
 import TodoService from '@/services/todo.service';
 import { ResponseStatus } from '@/types/ResponseEntity';
 import { AddedEmitPayload, Todo, TodoStatus } from '@/types/Todo';
-import TodolistArrayComp from '@/components/todolist/components/TodolistArrayComp.vue';
+import TodolistArrayComp from '@/components/todolist/TodolistArrayComp.vue';
 import Message from 'vue-m-message';
 
 const notDoneList = ref<Todo[]>([]);

@@ -43,7 +43,7 @@
 import { computed, defineEmits, defineProps, ref, withDefaults } from 'vue';
 import DraggableComp from 'vuedraggable';
 import { AddedEmitPayload, Todo, TodoStatus } from '@/types/Todo';
-import AddTodoModal from '@/components/todolist/components/AddTodoModal.vue';
+import AddTodoModal from '@/components/todolist/AddTodoModal.vue';
 import TodoService from '@/services/todo.service';
 import { ResponseStatus } from '@/types/ResponseEntity';
 import Message from 'vue-m-message';
