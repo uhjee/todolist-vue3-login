@@ -5,7 +5,7 @@
       <template #content>
         <div class="add-todo-modal--content">
           <Form @submit="onCreateTodo">
-            <Field name="todo" type="text" :rules="todoRules"/>
+            <Field name="todo" type="text" :rules="todoRules" ref="todoField"/>
             <ErrorMessage class="error-message" name="todo"/>
             <button>Add</button>
           </Form>
@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineExpose, ref } from 'vue';
+import { defineEmits, defineExpose, onMounted, ref } from 'vue';
 import { ErrorMessage, Field, Form } from 'vee-validate';
 import MyModal from '@/teleport/MyModal.vue';
 import * as yup from 'yup';
@@ -41,10 +41,10 @@ const show = () => {
   myModal.value?.show();
 };
 
-/**
- * [Add modal]
- */
-
+const todoField = ref<InstanceType<typeof Field> | null>(null);
+onMounted(() => {
+  console.log(todoField.value);
+});
 // const todoContent = ref<string>('');
 const onCloseModal = () => {
   // todoContent.value = '';
@@ -52,7 +52,7 @@ const onCloseModal = () => {
 
 const todoRules = yup.string()
   .required('할 일을 입력해주세요.')
-  .min(2);
+  .min(2, '2글자 이상 입력해주세요.');
 
 const onCreateTodo = async ({ todo }: { todo: string }) => {
   const shortTodo = `${todo.substring(0, 5)}...`;
